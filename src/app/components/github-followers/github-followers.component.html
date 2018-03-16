@@ -1,0 +1,15 @@
+<div *ngFor="let follower of followers" class="media">
+  <div class="media-left">
+    <a href="#">
+      <img class="avatar media-object" src="{{ follower.avatar_url }}" alt="...">
+    </a>
+  </div>
+  <div class="media-body">
+    <h4 class="media-heading">
+      <!-- Step 10.5: Updating each followers link. Since these routes are set dynamically, we use property-binding syntax. e.g. argument 1 is the first part of route, and the second argument is the login or id. Pretty much saying localhost/:4200/followers/:id-->
+      <!-- <a href="#">{{ follower.login }}</a> -->
+      <a [routerLink]="['/followers', follower.id]">{{ follower.login }}</a>
+    </h4>
+    <a href="follower.html_url">{{ follower.html_url }}</a>
+  </div>
+</div>
